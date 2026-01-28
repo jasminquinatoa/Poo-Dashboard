@@ -44,7 +44,7 @@ def mostrar_menu():
     }
 
     while True:
-        print("\nMenu Principal - Dashboard")
+        print("\nMenu Principal - Dashboard de Programación Orientada a Objetos ")
         # Imprime las opciones del menú principal
         for key in unidades:
             print(f"{key} - {unidades[key]}")
