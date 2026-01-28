@@ -55,12 +55,12 @@ def mostrar_menu():
 
         eleccion_unidad = input("Elige una unidad o '0' para salir: ")
         if eleccion_unidad == '0':
-            print("Saliendo del programa.")
+            print("Gracias por usar el Dashboard. Hasta luego.")
             break
         elif eleccion_unidad in unidades:
             mostrar_sub_menu(os.path.join(ruta_base, unidades[eleccion_unidad]))
         else:
-            print("Opción no válida. Por favor, intenta de nuevo.")
+            print("Opción incorrecta. Por favor, selecciona una opción válida.")
 
 # Muestra las carpetas correspondientes a cada unidad de la materia
 def mostrar_sub_menu(ruta_unidad):
@@ -82,9 +82,9 @@ def mostrar_sub_menu(ruta_unidad):
                 if 0 <= eleccion_carpeta < len(sub_carpetas):
                     mostrar_scripts(os.path.join(ruta_unidad, sub_carpetas[eleccion_carpeta]))
                 else:
-                    print("Opción no válida. Por favor, intenta de nuevo.")
+                    print("Opción incorrecta. Por favor, selecciona una opción válida.")
             except ValueError:
-                print("Opción no válida. Por favor, intenta de nuevo.")
+                print("Opción incorrecta. Por favor, selecciona una opción válida.")
 
 # Permite seleccionar, visualizar y ejecutar scripts de Python
 def mostrar_scripts(ruta_sub_carpeta):
@@ -114,14 +114,14 @@ def mostrar_scripts(ruta_sub_carpeta):
                         if ejecutar == '1':
                             ejecutar_codigo(ruta_script)
                         elif ejecutar == '0':
-                            print("No se ejecutó el script.")
+                            print("El script No se ejecutó, puedes seleccionar otro.")
                         else:
-                            print("Opción no válida. Regresando al menú de scripts.")
+                            print("Opción incorrecta. Regresando al menú de scripts.")
                         input("\nPresiona Enter para volver al menú de scripts.")
                 else:
-                    print("Opción no válida. Por favor, intenta de nuevo.")
+                    print("Opción incorrecta. Por favor, selecciona una opción válida.")
             except ValueError:
-                print("Opción no válida. Por favor, intenta de nuevo.")
+                print("Opción incorrecta. Por favor, selecciona una opción válida.")
 
 # Ejecutar el dashboard
 if __name__ == "__main__":
