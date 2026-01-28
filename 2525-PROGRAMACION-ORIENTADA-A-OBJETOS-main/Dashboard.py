@@ -9,6 +9,7 @@
 import os
 import subprocess
 
+# Función que muestra el código fuente de un script seleccionado
 def mostrar_codigo(ruta_script):
     # Asegúrate de que la ruta al script es absoluta
     ruta_script_absoluta = os.path.abspath(ruta_script)
@@ -25,6 +26,7 @@ def mostrar_codigo(ruta_script):
         print(f"Ocurrió un error al leer el archivo: {e}")
         return None
 
+# Función que ejecuta un script de Python
 def ejecutar_codigo(ruta_script):
     try:
         if os.name == 'nt':  # Windows
@@ -34,6 +36,7 @@ def ejecutar_codigo(ruta_script):
     except Exception as e:
         print(f"Ocurrió un error al ejecutar el código: {e}")
 
+# Función principal que muestra el menú del dashboard
 def mostrar_menu():
     # Define la ruta base donde se encuentra el dashboard.py
     ruta_base = os.path.dirname(__file__)
@@ -59,6 +62,7 @@ def mostrar_menu():
         else:
             print("Opción no válida. Por favor, intenta de nuevo.")
 
+# Muestra las carpetas correspondientes a cada unidad de la materia
 def mostrar_sub_menu(ruta_unidad):
     sub_carpetas = [f.name for f in os.scandir(ruta_unidad) if f.is_dir()]
 
@@ -82,6 +86,7 @@ def mostrar_sub_menu(ruta_unidad):
             except ValueError:
                 print("Opción no válida. Por favor, intenta de nuevo.")
 
+# Permite seleccionar, visualizar y ejecutar scripts de Python
 def mostrar_scripts(ruta_sub_carpeta):
     scripts = [f.name for f in os.scandir(ruta_sub_carpeta) if f.is_file() and f.name.endswith('.py')]
 
